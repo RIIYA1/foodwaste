@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Management</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 128, 0, 0.6), rgba(0, 128, 0, 0.6)),
+                url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTno-NXo1mqsEZyjt3SyL7jsZO9hkYZFffaDK-rVtKWmymmpIOutdGym0RLByHctET8HRg&usqp=CAU')
+                no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { filter: brightness(1); }
+            100% { filter: brightness(1.2); }
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            transition: background 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        nav:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .logo-container {
+            margin-left: 10px;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+        }
+
+        .background {
+            padding-top: 100px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ✅ Navigation Menu with Report option -->
+    <nav>
+        <div class="logo-container">
+            <img src="images/WhatsApp%20Image%202025-03-21%20at%2012.06.36%20PM.jpeg" alt="Logo" class="logo">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="add-waste.html">Donate</a></li>
+            <li><a href="report.html">Report</a></li> <!-- ✅ Report Option Added -->
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="background">
+        <h1 class="fade-in">Food Guard</h1>
+        <h2 class="fade-in">Food Wastage Management</h2>
+        <p class="fade-in">Save more, waste less, and build a sustainable future.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let elements = document.querySelectorAll(".fade-in");
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = "1";
+                }, index * 500);
+            });
+        });
+    </script>
+</body>
+
+</html>

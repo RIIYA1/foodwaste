@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Waste Reports</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #28a745;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 Food Waste Reports</h1>
+
+    <a href="dashboard.html" class="btn">⬅️ Back to Dashboard</a>
+
+    <h2>📅 Daily Waste Trends</h2>
+    <canvas id="dailyWasteChart"></canvas>
+
+    <h2>🍽️ Most Wasted Items</h2>
+    <canvas id="mostWastedChart"></canvas>
+
+    <h2>📥 Download Reports</h2>
+    <a href="generate_pdf.php" class="btn">📄 Download PDF</a>
+    <a href="generate_excel.php" class="btn">📊 Download Excel</a>
+</div>
+
+<script>
+    // Chart.js - Daily Waste Trends
+    const dailyCtx = document.getElementById('dailyWasteChart').getContext('2d');
+    new Chart(dailyCtx, {
+        type: 'line',
+        data: {
+            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+            datasets: [{
+                label: "Waste (kg)",
+                data: [5, 8, 6, 10, 7, 4, 9],
+                borderColor: "green",
+                fill: false
+            }]
+        }
+    });
+
+    // Chart.js - Most Wasted Items
+    const mostWastedCtx = document.getElementById('mostWastedChart').getContext('2d');
+    new Chart(mostWastedCtx, {
+        type: 'bar',
+        data: {
+            labels: ["Rice", "Vegetables", "Bread", "Meat", "Fruits"],
+            datasets: [{
+                label: "Wasted Quantity (kg)",
+                data: [12, 9, 5, 7, 8],
+                backgroundColor: ["#ff6384", "#36a2eb", "#ffce56", "#4bc0c0", "#9966ff"]
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>

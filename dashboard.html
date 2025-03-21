@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Waste Log - Food Waste Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #28a745;
+            margin-bottom: 30px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .back-btn {
+            background-color: #6c757d;
+        }
+
+        .back-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Form to Add Waste</h1>
+    <form method="POST" action="save-dashboard.php">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">-- Select Category --</option>
+            <option value="Leftovers">Leftovers</option>
+            <option value="Expired Items">Expired Items</option>
+            <option value="Preparation Waste">Preparation Waste</option>
+            <option value="Spoiled Ingredients">Spoiled Ingredients</option>
+        </select>
+
+        <label for="quantity">Quantity (kg):</label>
+        <input type="number" id="quantity" name="quantity" min="0.1" step="0.1" required>
+
+        <label for="notes">Notes (optional):</label>
+        <input type="text" id="notes" name="notes">
+
+        <button type="submit">Submit Waste Log</button>
+    </form>
+
+    <br>
+    <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+
+</div>
+
+</body>
+</html>

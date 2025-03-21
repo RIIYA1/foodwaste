@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - Food Waste Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #28a745;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .contact-info {
+            margin-top: 30px;
+            background-color: #f1f8e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        a {
+            display: inline-block;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .success-message {
+            color: green;
+            font-size: 18px;
+            display: none;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <div class="container">
+        <h2>We'd love to hear from you!</h2>
+
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+
+        <div class="success-message" id="successMessage">✅ Your message has been sent successfully!</div>
+
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <p>📧 Email: support@foodwastetracker.com</p>
+            <p>📞 Phone: +1 234 567 890</p>
+        </div>
+
+        <br><a href="index.html">Back to Home</a>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent actual form submission
+
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            if (name === '' || email === '' || message === '') {
+                alert('❌ Please fill out all fields.');
+                return;
+            }
+
+            // Success Message (You can replace this with PHP backend later)
+            successMessage.style.display = 'block';
+            form.reset();
+        });
+    </script>
+
+</body>
+
+</html>

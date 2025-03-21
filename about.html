@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - Food Waste Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #28a745;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #28a745;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .mission {
+            margin-bottom: 30px;
+        }
+
+        .images-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .images-section img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .success-stories {
+            background-color: #e8f5e9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .story {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            border-left: 5px solid #28a745;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 12px 25px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 15px 10px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        a {
+            display: inline-block;
+            color: #007bff;
+            text-decoration: none;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>About Us - Food Waste Tracker</h1>
+    </header>
+
+    <div class="container">
+        <div class="mission">
+            <h2>Our Mission</h2>
+            <p>We are dedicated to reducing food waste and helping businesses track, manage, and minimize waste efficiently. 
+               Our platform provides smart analytics and actionable insights to prevent unnecessary food wastage.</p>
+        </div>
+
+        <div class="how-we-help">
+            <h2>How We Help</h2>
+            <p>Our platform allows restaurants and food businesses to log their daily waste, analyze reports, and track progress. 
+               By understanding waste patterns, businesses can make informed decisions, saving money and contributing to a sustainable future.</p>
+        </div>
+
+        <div class="images-section">
+            <img src="images\WhatsApp Image 2025-03-22 at 2.09.30 AM.jpeg" alt="Waste Reduction">
+            <img src="images\WhatsApp Image 2025-03-22 at 2.09.43 AM.jpeg" alt="Analytics">
+            <img src="images\download.jpeg" alt="Success Story">
+        </div>
+
+        <div class="success-stories">
+            <h2>Success Stories</h2>
+            <div class="story">✅ <strong>GreenLeaf Diner</strong> reduced food waste by 40% in just 3 months using our platform.</div>
+            <div class="story">✅ <strong>FreshBites Cafe</strong> saved $500/month by identifying most wasted items and optimizing portions.</div>
+            <div class="story">✅ <strong>Foodie Hub</strong> partnered with local NGOs to donate surplus edible food, reducing waste significantly.</div>
+        </div>
+
+        <button onclick="viewMore()">View More Stories</button>
+        <button onclick="downloadAbout()">Download Info</button>
+
+        <br><a href="index.html">Back to Home</a>
+    </div>
+
+    <script>
+        function viewMore() {
+            alert('More inspiring stories coming soon!');
+        }
+
+        function downloadAbout() {
+            const aboutData = `Our Mission: 
+Reduce food waste and help businesses track, manage, and minimize waste.
+
+How We Help:
+- Waste logging
+- Analytics reports
+- Success tracking
+
+Success Stories:
+- GreenLeaf Diner reduced waste by 40%
+- FreshBites Cafe saved $500/month
+- Foodie Hub donates surplus food`;
+
+            const blob = new Blob([aboutData], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = "About_Us_FoodWaste.txt";
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+
+</body>
+
+</html>
